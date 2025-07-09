@@ -1,0 +1,147 @@
+/* src/App.css */
+
+/* --- KEY CHANGES FOR FULL-SCREEN FLEX LAYOUT --- 
+
+/* 1. Make html, body, and the React root div take up full height */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #1d14c9; /* Your light blue background */
+}
+
+/* 2. Make the React root div a flex container */
+#root {
+  display: flex;
+  justify-content: center; /* Center the child horizontally */
+  align-items: flex-start; /* Align the child to the top */
+  padding: 20px; /* Add some padding so the container isn't flush with the screen edges */
+  box-sizing: border-box; /* Ensures padding is included in height/width calculation */
+}
+
+/* 3. Your main app container styles */
+.app-container {
+  width: 100%; /* Take up full width of its parent (#root's padded area) */
+  max-width: 900px; /* Still have a max-width for readability on very wide screens */
+  padding: 30px;
+  background-color: rgb(232, 248, 17);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+/* --- END OF KEY CHANGES --- */
+
+
+/* --- REST OF THE STYLES (MOSTLY THE SAME) --- */
+.app-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.app-header h1 {
+  margin: 0;
+  color: #0b3f72;
+  font-size: 2.5rem;
+}
+
+.app-header p {
+  color: #010404;
+  font-size: 1.1rem;
+}
+
+.summarizer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.text-input {
+  width: 100%;
+  min-height: 250px; /* Use min-height to allow it to grow if needed */
+  padding: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  resize: vertical; /* Allow vertical resize but not horizontal */
+  box-sizing: border-box;
+}
+
+.submit-button {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: rgb(245, 244, 243);
+  background-color: #27ae60;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-end; /* Keep button aligned to the right of the form */
+  width: 200px;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #229954;
+}
+
+.submit-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.results-container {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.error-message {
+  color: #c0392b;
+  background-color: #fdd;
+  border: 1px solid #c0392b;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.summary-section, .keywords-section {
+  background-color: #ff34cf;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.summary-section h2, .keywords-section h2 {
+  margin-top: 0;
+  color: #34495e;
+  padding-bottom: 10px;
+}
+
+.summary-section p {
+  line-height: 1.6;
+  white-space: pre-wrap;
+  color: #000000;
+}
+
+.keywords-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.keyword-tag {
+  background-color: #ecf0f1;
+  color: #000000;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+}
+
+.app-footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.9em;
+  color: #ce0c10;
+}
