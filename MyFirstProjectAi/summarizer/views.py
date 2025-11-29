@@ -21,7 +21,7 @@ if GEMINI_API_KEY:  # Check if the Python variable GEMINI_API_KEY has a value
         genai.configure(api_key=GEMINI_API_KEY)
         
         # If configuration is successful, initialize the model
-        gemini_model = genai.GenerativeModel('gemini-1.5-flash-latest') # Or your preferred Gemini model
+        gemini_model = genai.GenerativeModel('gemini-2.5-flash') # Or your preferred Gemini model
         
         print("Gemini API configured successfully.")
     except Exception as e:
