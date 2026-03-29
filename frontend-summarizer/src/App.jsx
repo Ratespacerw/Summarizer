@@ -17,8 +17,12 @@ function App() {
     setKeywords([]);
     setIsLoading(true);
 
+    // This line detects if we are on Vercel (using the URL we set) or local
+    const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/summarizer/process/', {
+      // We use the variable here instead of the hardcoded IP
+      const response = await fetch(`${API_URL}/api/summarizer/process/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
